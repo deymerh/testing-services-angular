@@ -57,8 +57,6 @@ describe('AuthService', () => {
       // http config
       const API_URL = `${environment.API_URL}/auth/login`;
       const request = httpTestingController.expectOne(API_URL);
-      const headers = request.request.headers;
-      expect(headers.get('Authorization')).toEqual(`Bearer ${access_token}`);
       request.flush(myMockData);
     });
 
